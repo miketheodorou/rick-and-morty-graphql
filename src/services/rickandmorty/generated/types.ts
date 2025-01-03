@@ -204,3 +204,10 @@ export type CharactersQueryVariables = Exact<{ [key: string]: never; }>;
 
 
 export type CharactersQuery = { __typename?: 'Query', characters?: { __typename?: 'Characters', info?: { __typename?: 'Info', count?: number | null, pages?: number | null, next?: number | null, prev?: number | null } | null, results?: Array<{ __typename?: 'Character', id?: string | null, created?: string | null, gender?: string | null, image?: string | null, name?: string | null, species?: string | null, status?: string | null } | null> | null } | null };
+
+export type CharacterQueryVariables = Exact<{
+  characterId: Scalars['ID']['input'];
+}>;
+
+
+export type CharacterQuery = { __typename?: 'Query', character?: { __typename?: 'Character', id?: string | null, created?: string | null, gender?: string | null, image?: string | null, name?: string | null, species?: string | null, status?: string | null } | null };

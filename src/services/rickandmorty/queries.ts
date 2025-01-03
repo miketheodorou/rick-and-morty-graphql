@@ -21,3 +21,17 @@ export const charactersQuery = gql(`
     }
   }
 `);
+
+export const characterQuery = gql(`
+  query Character($characterId: ID!) {
+    character(id: $characterId) {
+      id
+      created
+      gender
+      image
+      name
+      species
+      status
+    }
+  }  
+`);

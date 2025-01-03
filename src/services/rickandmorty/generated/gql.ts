@@ -15,6 +15,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  */
 const documents = {
     "\n  query Characters {\n    characters {\n      info {\n        count\n        pages\n        next\n        prev\n      }\n      results {\n        id\n        created\n        gender\n        image\n        name\n        species\n        status\n      }\n    }\n  }\n": types.CharactersDocument,
+    "\n  query Character($characterId: ID!) {\n    character(id: $characterId) {\n      id\n      created\n      gender\n      image\n      name\n      species\n      status\n    }\n  }  \n": types.CharacterDocument,
 };
 
 /**
@@ -35,6 +36,10 @@ export function gql(source: string): unknown;
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
 export function gql(source: "\n  query Characters {\n    characters {\n      info {\n        count\n        pages\n        next\n        prev\n      }\n      results {\n        id\n        created\n        gender\n        image\n        name\n        species\n        status\n      }\n    }\n  }\n"): (typeof documents)["\n  query Characters {\n    characters {\n      info {\n        count\n        pages\n        next\n        prev\n      }\n      results {\n        id\n        created\n        gender\n        image\n        name\n        species\n        status\n      }\n    }\n  }\n"];
+/**
+ * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function gql(source: "\n  query Character($characterId: ID!) {\n    character(id: $characterId) {\n      id\n      created\n      gender\n      image\n      name\n      species\n      status\n    }\n  }  \n"): (typeof documents)["\n  query Character($characterId: ID!) {\n    character(id: $characterId) {\n      id\n      created\n      gender\n      image\n      name\n      species\n      status\n    }\n  }  \n"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};
