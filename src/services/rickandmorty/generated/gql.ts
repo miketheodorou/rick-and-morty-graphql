@@ -14,7 +14,7 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Learn more about it here: https://the-guild.dev/graphql/codegen/plugins/presets/preset-client#reducing-bundle-size
  */
 const documents = {
-    "\n  query Characters {\n    characters {\n      info {\n        count\n        pages\n        next\n        prev\n      }\n      results {\n        id\n        name\n        status\n        species\n        type\n      }\n    }\n  }\n": types.CharactersDocument,
+    "\n  query Characters {\n    characters {\n      info {\n        count\n        pages\n        next\n        prev\n      }\n      results {\n        id\n        created\n        gender\n        image\n        name\n        species\n        status\n      }\n    }\n  }\n": types.CharactersDocument,
 };
 
 /**
@@ -34,7 +34,7 @@ export function gql(source: string): unknown;
 /**
  * The gql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function gql(source: "\n  query Characters {\n    characters {\n      info {\n        count\n        pages\n        next\n        prev\n      }\n      results {\n        id\n        name\n        status\n        species\n        type\n      }\n    }\n  }\n"): (typeof documents)["\n  query Characters {\n    characters {\n      info {\n        count\n        pages\n        next\n        prev\n      }\n      results {\n        id\n        name\n        status\n        species\n        type\n      }\n    }\n  }\n"];
+export function gql(source: "\n  query Characters {\n    characters {\n      info {\n        count\n        pages\n        next\n        prev\n      }\n      results {\n        id\n        created\n        gender\n        image\n        name\n        species\n        status\n      }\n    }\n  }\n"): (typeof documents)["\n  query Characters {\n    characters {\n      info {\n        count\n        pages\n        next\n        prev\n      }\n      results {\n        id\n        created\n        gender\n        image\n        name\n        species\n        status\n      }\n    }\n  }\n"];
 
 export function gql(source: string) {
   return (documents as any)[source] ?? {};

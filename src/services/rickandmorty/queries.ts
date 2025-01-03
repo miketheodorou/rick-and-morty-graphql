@@ -11,10 +11,12 @@ export const charactersQuery = gql(`
       }
       results {
         id
+        created
+        gender
+        image
         name
-        status
         species
-        type
+        status
       }
     }
   }
